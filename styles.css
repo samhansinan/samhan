@@ -1,0 +1,478 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #081b29;
+    color: #cfd8dc;
+    line-height: 1.6;
+}
+
+/* Header Section */
+/* General Navigation Bar Styling */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #051129;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    z-index: 1000;
+}
+
+.header .loggo img {
+    height: 50px;
+}
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+   
+}
+
+.header .nav a {
+    color: #cfd8dc;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.header .nav a:hover {
+    color: #ff4655;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    }
+
+    .header .nav {
+        display: none; /* Hide navigation links initially */
+        flex-direction: column;
+        gap: 10px;
+        background: #051129;
+        padding: 10px;
+        position: absolute;
+        top: 100%;
+        right: 10%;
+        width: 200px;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    .header .nav.show {
+        display: flex; /* Show navigation links when active */
+    }
+
+    .header .nav a {
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        border-bottom: 1px solid #cfd8dc;
+    }
+
+    .header .nav a:last-child {
+        border-bottom: none;
+    }
+
+    /* Hamburger Menu */
+    .header .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .header .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #cfd8dc;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .header .hamburger.active div:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .header .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header .hamburger.active div:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* Home Section */
+.home1 {
+    width: 100%;
+    height: 100vh;
+    background: url('plane 1.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.home {
+    max-width: 50%;
+}
+
+.home h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.home h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.home p {
+    margin-bottom: 10px;
+    color: #cfd8dc;
+}
+
+.homesoc a {
+    color: #cfd8dc;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.homesoc a:hover {
+    color: #ff4655;
+}
+
+.profile img {
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .home1 {
+        flex-direction: column-reverse; /* Profile image appears first */
+        padding: 20px;
+        text-align: center;
+        margin-top: 90px; /* Push content below the fixed navigation bar */
+    }
+
+    .home {
+        max-width: 100%;
+    }
+
+    .profile {
+        margin-top: 20px; /* Add space between the navigation bar and the profile */
+        z-index: 1; /* Ensure the profile is on top of background elements */
+        position: relative; /* Ensure stacking context */
+    }
+
+    .profile img {
+        width: 200px; /* Adjust size for smaller screens */
+        height: 200px;
+        margin: 0 auto; /* Center the image */
+        border-radius: 50%; /* Maintain the circular shape */
+        border: 5px solid #ffffff; /* Add a border for visibility */
+        z-index: 1; /* Ensure visibility */
+        position: relative;
+    }
+
+    .header {
+        z-index: 999; /* Keep the navigation bar on top */
+    }
+
+    .homesoc {
+        margin-top: 10px; /* Add space between the profile and social icons */
+    }
+
+    .homesoc a {
+        font-size: 1.2rem; /* Slightly smaller icons for smaller screens */
+    }
+}
+
+
+    
+
+
+    
+    /* Ensure About Section is mobile-friendly */
+    .About {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .abouttext,
+    .aboutimag {
+        max-width: 100%;
+    }
+
+    .abouttext h1 {
+        font-size: 2rem;
+    }
+
+    /* Portfolio Section */
+    .portfolio-content {
+        grid-template-columns: 1fr; /* Single column layout on small screens */
+    }
+
+    .row img {
+        width: 100%; /* Ensure images scale correctly */
+    }
+
+    /* Contact Section */
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-text,
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-text h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Button */
+.button {
+    margin-top: 20px;
+}
+
+.button_lg {
+    display: inline-block;
+    background-color: #0f1923;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button_lg:hover {
+    background-color: #ff4655;
+}
+
+/* About Section */
+.About {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 10%;
+    background: #051129;
+}
+
+.abouttext h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.abouttext span {
+    color: #ff4655;
+}
+
+.abouttext p {
+    color: #cfd8dc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.abouttext .btn {
+    color: #ffffff;
+    background: #0f1923;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.abouttext .btn:hover {
+    background: #ff4655;
+}
+
+/* Skills Section */
+.container1 {
+    padding: 5rem 10%;
+    background: #081b29;
+}
+
+.heading2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.Technicalbar .bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.Technicalbar .bar .info {
+    flex: 1;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.Technicalbar .bar .progress-line {
+    flex: 3;
+    background: #cfd8dc;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 10px;
+    position: relative;
+}
+
+.Technicalbar .bar .progress-line span {
+    display: block;
+    height: 100%;
+    background: #c8afb1;
+    width: 0;
+    animation: progress 2s forwards;
+    border-radius: 5px;
+}
+
+/* Keyframes for smooth progress */
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--progress-width);
+    }
+}
+
+/* Skill-specific progress widths */
+.Technicalbar .bar.html .progress-line span {
+    --progress-width: 90%;
+    width: 90%;
+}
+
+.Technicalbar .bar.css .progress-line span {
+    --progress-width: 80%;
+    width: 80%;
+}
+
+.Technicalbar .bar.js .progress-line span {
+    --progress-width: 70%;
+    width: 70%;
+}
+
+
+
+.Technicalbar .bar.java .progress-line span {
+    --progress-width: 75%;
+    width: 75%;
+}
+
+
+/* Portfolio Section */
+.portfolio {
+    padding: 5rem 10%;
+    background: #051129;
+}
+
+.portfolio-content {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.row img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.row:hover img {
+    transform: scale(1.1);
+}
+
+.leyer {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 20px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+}
+
+.row:hover .leyer {
+    transform: translateY(0);
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    padding: 5rem 10%;
+    background: #081b29;
+}
+
+.contact-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-text span {
+    color: #ff4655;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff4655;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #ff6e75;
+}
+
+/* Keyframes */
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
