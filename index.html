@@ -60,7 +60,7 @@
             <a href="mailto:msamhan307@gmail.com"><i class='bx bxs-envelope' ></i></a>
             <a href="#"><i class='bx bxl-whatsapp' ></i></a>
         </div>
-        <a href="Samhan Resume.pdf" download>
+        <a href="samhan sinan cv.pdf" download>
             <button class="button">
                 <span class="button_lg">
                     <span class="button_sl"></span>
@@ -231,19 +231,36 @@ dynamic field.</p>
             <a href="mailto:msamhan307@gmail.com"><i class='bx bx-envelope'></i></a>
         </div>
     </div>
-    <div class="contact-form">
-        <form action="mailto:msamhan307@gmail.com" method="post" enctype="text/plain">
-            <input type="text" placeholder="Enter your Name" required>
-            <input type="email" placeholder="Enter your Email" required>
-            <input type="text" placeholder="Enter the Subject">
-            <textarea placeholder="Enter your Message" required></textarea>
-            <button type="submit" class="send">Submit</button>
-        </form>
-    </div>
+   <div class="contact-form">
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Enter your Name" required>
+        <input type="email" id="email" placeholder="Enter your Email" required>
+        <input type="text" id="subject" placeholder="Enter the Subject" required>
+        <textarea id="message" placeholder="Enter your Message" required></textarea>
+        <button type="submit" class="send">Submit</button>
+    </form>
+</div>
+
 </section>
 
 
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault();
 
+    // Get values
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    // Build email content
+    let emailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+    // Redirect to email client
+    window.location.href = `mailto:msamhan307@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+});
+</script>
 
 </body>
 
